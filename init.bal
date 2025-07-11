@@ -8,6 +8,7 @@ function init() returns error? {
     check initGoal();
     check initMedicationStatement();
     check initMedication();
+    check initImmunization();
 
     log:printInfo("FHIR service initialized successfully");
 }

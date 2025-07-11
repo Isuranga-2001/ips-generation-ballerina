@@ -1,0 +1,33 @@
+{
+	"info": {
+		"_postman_id": "05b58681-2e06-4c50-b1e9-52f96a9f020d",
+		"name": "IPS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41953006"
+	},
+	"item": [
+		{
+			"name": "Patient Summary",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9090/fhir/r4/Patient/102/$summary",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"fhir",
+						"r4",
+						"Patient",
+						"102",
+						"$summary"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
