@@ -460,3 +460,55 @@ service / on new fhirr4:Listener(9082, apiConfigMedication) {
         return r4:createFHIRError("Not implemented", r4:ERROR, r4:INFORMATIONAL, httpStatusCode = http:STATUS_NOT_IMPLEMENTED);
     }
 }
+
+# Immunization type
+public type Immunization international401:Immunization;
+
+# Immunization service
+service / on new fhirr4:Listener(9083, apiConfigImmunization) {
+
+    // Read the current state of single resource based on its id.
+    isolated resource function get fhir/r4/Immunization/[string id](r4:FHIRContext fhirContext) returns Immunization|r4:OperationOutcome|r4:FHIRError {
+        return check getByIdImmunization(id);
+    }
+
+    // Search for resources based on a set of criteria.
+    isolated resource function get fhir/r4/Immunization(r4:FHIRContext fhirContext) returns r4:Bundle|r4:OperationOutcome|r4:FHIRError {
+        return check searchImmunization(getQueryParamsMap(fhirContext.getRequestSearchParameters()));
+    }
+
+    // Create a new resource.
+    isolated resource function post fhir/r4/Immunization(r4:FHIRContext fhirContext, Immunization immunization) returns Immunization|r4:OperationOutcome|r4:FHIRError {
+        return check createImmunization(immunization);
+    }
+
+    // Update the current state of a resource completely.
+    isolated resource function put fhir/r4/Immunization/[string id](r4:FHIRContext fhirContext, Immunization immunization) returns Immunization|r4:OperationOutcome|r4:FHIRError {
+        // Not implemented
+        return r4:createFHIRError("Not implemented", r4:ERROR, r4:INFORMATIONAL, httpStatusCode = http:STATUS_NOT_IMPLEMENTED);
+    }
+
+    // Update the current state of a resource partially.
+    isolated resource function patch fhir/r4/Immunization/[string id](r4:FHIRContext fhirContext, json patch) returns Immunization|r4:OperationOutcome|r4:FHIRError {
+        // Not implemented
+        return r4:createFHIRError("Not implemented", r4:ERROR, r4:INFORMATIONAL, httpStatusCode = http:STATUS_NOT_IMPLEMENTED);
+    }
+
+    // Delete a resource.
+    isolated resource function delete fhir/r4/Immunization/[string id](r4:FHIRContext fhirContext) returns r4:OperationOutcome|r4:FHIRError {
+        // Not implemented
+        return r4:createFHIRError("Not implemented", r4:ERROR, r4:INFORMATIONAL, httpStatusCode = http:STATUS_NOT_IMPLEMENTED);
+    }
+
+    // Retrieve the update history for a particular resource.
+    isolated resource function get fhir/r4/Immunization/[string id]/_history(r4:FHIRContext fhirContext) returns r4:Bundle|r4:OperationOutcome|r4:FHIRError {
+        // Not implemented
+        return r4:createFHIRError("Not implemented", r4:ERROR, r4:INFORMATIONAL, httpStatusCode = http:STATUS_NOT_IMPLEMENTED);
+    }
+
+    // Retrieve the update history for all resources.
+    isolated resource function get fhir/r4/Immunization/_history(r4:FHIRContext fhirContext) returns r4:Bundle|r4:OperationOutcome|r4:FHIRError {
+        // Not implemented
+        return r4:createFHIRError("Not implemented", r4:ERROR, r4:INFORMATIONAL, httpStatusCode = http:STATUS_NOT_IMPLEMENTED);
+    }
+}
