@@ -1,0 +1,8 @@
+[ballerinax.health.fhir.r4.ips.ips_meta_data_config]
+compositionTitle="Patient Summary"
+compositionStatus="preliminary"
+ipsBundleIdentifier="urn:uuid:12345678-1234-5678-1234-567812345678"
+authors=["Organization/50"]
+custodian="Organization/50"
+attesters=["Practitioner/123"]
+
