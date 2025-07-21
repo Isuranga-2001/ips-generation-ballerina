@@ -1,0 +1,447 @@
+{
+    "resourceType": "Bundle",
+    "meta": {
+        "profile": [
+            "http://hl7.org/fhir/StructureDefinition/Bundle"
+        ]
+    },
+    "identifier": {
+        "system": "urn:oid:2.16.724.4.8.10.200.10",
+        "value": "9a8fc03d-d29a-4f9f-bb9f-f915c61df89a"
+    },
+    "type": "document",
+    "timestamp": "2025-07-21T06:52:19.389021900Z",
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Composition",
+                "date": "2025-07-21T06:52:18.599124500Z",
+                "subject": {
+                    "reference": "Patient/102"
+                },
+                "author": [
+                    {
+                        "reference": "Organization/50"
+                    }
+                ],
+                "section": [
+                    {
+                        "entry": [
+                            {
+                                "reference": "Condition/12345"
+                            }
+                        ],
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "11450-4",
+                                    "display": "Problem list"
+                                }
+                            ]
+                        },
+                        "text": {
+                            "status": "generated",
+                            "div": "<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Hypertension</div>"
+                        },
+                        "title": "Active Problems"
+                    },
+                    {
+                        "entry": [
+                            {
+                                "reference": "AllergyIntolerance/20300"
+                            },
+                            {
+                                "reference": "AllergyIntolerance/allergy-pollen"
+                            }
+                        ],
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "48765-2",
+                                    "display": "Allergies &or adverse reactions"
+                                }
+                            ]
+                        },
+                        "text": {
+                            "status": "generated",
+                            "div": "<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">Penicillin, Pollen Allergy</div>"
+                        },
+                        "title": "Allergies and Intolerances"
+                    },
+                    {
+                        "entry": [
+                            {
+                                "reference": "MedicationStatement/30001"
+                            }
+                        ],
+                        "code": {
+                            "coding": [
+                                {
+                                    "system": "http://loinc.org",
+                                    "code": "10160-0",
+                                    "display": "Medication use"
+                                }
+                            ]
+                        },
+                        "text": {
+                            "status": "generated",
+                            "div": "<div xmlns=\\\"http://www.w3.org/1999/xhtml\\\">No information available.</div>"
+                        },
+                        "title": "Medication Summary"
+                    }
+                ],
+                "title": "IPS Document",
+                "type": {
+                    "coding": [
+                        {
+                            "system": "http://loinc.org",
+                            "code": "60591-5",
+                            "display": "Patient summary"
+                        }
+                    ]
+                },
+                "status": "final"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:102",
+            "resource": {
+                "resourceType": "Patient",
+                "gender": "female",
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "+1 555-123-4567",
+                        "use": "mobile"
+                    },
+                    {
+                        "system": "email",
+                        "value": "jax.shaw@example.com"
+                    }
+                ],
+                "id": "102",
+                "identifier": [
+                    {
+                        "system": "http://hospital.org/patients",
+                        "value": "54321"
+                    },
+                    {
+                        "use": "secondary",
+                        "system": "urn:oid:wso2.healthcare.payer.memberID",
+                        "value": "644d85af-aaf9-4068-ad23-1e55aedd5205"
+                    }
+                ],
+                "address": [
+                    {
+                        "line": [
+                            "456 Elm Street"
+                        ],
+                        "city": "Oaktown",
+                        "state": "NY",
+                        "postalCode": "10001",
+                        "country": "US"
+                    }
+                ],
+                "birthDate": "1985-08-22",
+                "name": [
+                    {
+                        "use": "official",
+                        "family": "Shaw",
+                        "given": [
+                            "Jax"
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:12345",
+            "resource": {
+                "resourceType": "Condition",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "38341003",
+                            "display": "Hypertension"
+                        }
+                    ],
+                    "text": "Hypertension"
+                },
+                "subject": {
+                    "reference": "Patient/102"
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-clinical",
+                            "code": "active"
+                        }
+                    ]
+                },
+                "onsetDateTime": "2020-01-15",
+                "id": "12345",
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/condition-ver-status",
+                            "code": "confirmed"
+                        }
+                    ]
+                },
+                "category": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://terminology.hl7.org/CodeSystem/condition-category",
+                                "code": "encounter-diagnosis",
+                                "display": "Encounter Diagnosis"
+                            }
+                        ]
+                    }
+                ]
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:20300",
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                            "code": "7980",
+                            "display": "Penicillin"
+                        }
+                    ],
+                    "text": "Penicillin"
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "code": "active",
+                            "display": "Active"
+                        }
+                    ]
+                },
+                "onsetDateTime": "2012-06-10",
+                "type": "allergy",
+                "patient": {
+                    "reference": "Patient/102"
+                },
+                "id": "20300",
+                "reaction": [
+                    {
+                        "severity": "moderate",
+                        "manifestation": [
+                            {
+                                "coding": [
+                                    {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "271807003",
+                                        "display": "Rash"
+                                    }
+                                ],
+                                "text": "Skin rash"
+                            }
+                        ],
+                        "description": "Developed itchy rash after taking penicillin"
+                    }
+                ],
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+                            "code": "confirmed",
+                            "display": "Confirmed"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:allergy-pollen",
+            "resource": {
+                "resourceType": "AllergyIntolerance",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://snomed.info/sct",
+                            "code": "418689008",
+                            "display": "Allergy to pollen"
+                        }
+                    ],
+                    "text": "Pollen Allergy"
+                },
+                "clinicalStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical",
+                            "code": "active",
+                            "display": "Active"
+                        }
+                    ]
+                },
+                "onsetDateTime": "2015-04-01",
+                "type": "allergy",
+                "patient": {
+                    "reference": "Patient/102"
+                },
+                "id": "allergy-pollen",
+                "reaction": [
+                    {
+                        "severity": "mild",
+                        "manifestation": [
+                            {
+                                "coding": [
+                                    {
+                                        "system": "http://snomed.info/sct",
+                                        "code": "78352004",
+                                        "display": "Sneezing"
+                                    }
+                                ],
+                                "text": "Sneezing and runny nose"
+                            }
+                        ],
+                        "description": "Seasonal sneezing and nasal congestion"
+                    }
+                ],
+                "verificationStatus": {
+                    "coding": [
+                        {
+                            "system": "http://terminology.hl7.org/CodeSystem/allergyintolerance-verification",
+                            "code": "confirmed",
+                            "display": "Confirmed"
+                        }
+                    ]
+                }
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:30001",
+            "resource": {
+                "resourceType": "MedicationStatement",
+                "subject": {
+                    "reference": "Patient/102"
+                },
+                "medicationReference": {
+                    "reference": "Medication/1049630"
+                },
+                "id": "30001",
+                "effectivePeriod": {},
+                "medicationCodeableConcept": {
+                    "coding": [
+                        {
+                            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                            "code": "1049630",
+                            "display": "Atorvastatin 20 MG Oral Tablet"
+                        }
+                    ],
+                    "text": "Atorvastatin 20 MG Oral Tablet"
+                },
+                "effectiveDateTime": "2024-01-01",
+                "status": "active"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:50",
+            "resource": {
+                "resourceType": "Organization",
+                "identifier": [
+                    {
+                        "system": "http://hl7.org/fhir/sid/us-npi",
+                        "value": "1234567890"
+                    }
+                ],
+                "address": [
+                    {
+                        "line": [
+                            "456 Insurance Ave"
+                        ],
+                        "city": "Insuretown",
+                        "state": "OH",
+                        "postalCode": "43004",
+                        "country": "US"
+                    }
+                ],
+                "active": true,
+                "type": [
+                    {
+                        "coding": [
+                            {
+                                "system": "http://hl7.org/fhir/organization-role",
+                                "code": "payer",
+                                "display": "Payer"
+                            }
+                        ]
+                    }
+                ],
+                "meta": {},
+                "contact": [
+                    {
+                        "purpose": {
+                            "coding": [
+                                {
+                                    "system": "http://terminology.hl7.org/CodeSystem/contactentity-type",
+                                    "code": "ADMIN",
+                                    "display": "Administrative"
+                                }
+                            ]
+                        },
+                        "name": {
+                            "family": "Adam",
+                            "given": [
+                                "Nickman"
+                            ]
+                        },
+                        "telecom": [
+                            {
+                                "system": "phone",
+                                "value": "+1 800-555-5678",
+                                "use": "work"
+                            },
+                            {
+                                "system": "email",
+                                "value": "adam@kindcover.com",
+                                "use": "work"
+                            }
+                        ]
+                    }
+                ],
+                "name": "KindCover Health Insurance",
+                "telecom": [
+                    {
+                        "system": "phone",
+                        "value": "+1 800-555-1234",
+                        "use": "work"
+                    },
+                    {
+                        "system": "email",
+                        "value": "support@kindcover.com",
+                        "use": "work"
+                    }
+                ],
+                "id": "50"
+            }
+        },
+        {
+            "fullUrl": "urn:uuid:1049630",
+            "resource": {
+                "resourceType": "Medication",
+                "code": {
+                    "coding": [
+                        {
+                            "system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+                            "code": "1049630",
+                            "display": "Atorvastatin 20 MG Oral Tablet"
+                        }
+                    ]
+                },
+                "id": "1049630"
+            }
+        }
+    ]
+}

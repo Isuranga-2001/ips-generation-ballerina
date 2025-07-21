@@ -208,7 +208,11 @@ final r4:ResourceAPIConfig apiConfig = {
                             {resourceType: "MedicationStatement", patientParam: "subject"}
                         ]
                     }
-                ]
+                ],
+                ipsMetaData: {
+                    compositionTitle: "IPS Document",
+                    authors: ["Organization/50"]
+                }
             }
         }
     ],
