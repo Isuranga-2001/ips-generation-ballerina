@@ -52,7 +52,7 @@ public isolated function searchCondition(map<string[]>? searchParameters = ()) r
                 "_id" => {
                     id = searchParameters.get('key)[0];
                 }
-                "subject" => {
+                "patient" => {
                     patient = searchParameters.get('key)[0];
                 }
                 "_count" => {

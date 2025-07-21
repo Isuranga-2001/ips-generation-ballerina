@@ -191,7 +191,7 @@ final r4:ResourceAPIConfig apiConfig = {
                         sectionName: ips:PROBLEMS,
                         sectionTitle: "Active Problems",
                         resources: [
-                            {resourceType: "Condition", patientParam: "subject"}
+                            {resourceType: "Condition"}
                         ]
                     },
                     {
@@ -278,6 +278,15 @@ final r4:ResourceAPIConfig apiConfigCondition = {
     searchParameters: [
         {
             name: "subject",
+            active: true,
+            'type: r4:STRING,
+            information: {
+                description: "Who has the condition?",
+                documentation: "https://hl7.org/fhir/R4/search.html#reference"
+            }
+        },
+        {
+            name: "patient",
             active: true,
             'type: r4:STRING,
             information: {
