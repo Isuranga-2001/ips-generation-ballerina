@@ -3,9 +3,30 @@ import ballerinax/health.clients.fhir;
 import ballerinax/health.fhir.r4;
 import ballerinax/health.fhir.r4.parser;
 import ballerinax/health.fhir.r4.uscore501;
+import ballerinax/health.fhir.r4.ips;
+import ballerina/log;
 
 isolated uscore501:USCorePatientProfile[] patients = [];
 isolated int createOperationNextId = 102;
+
+public isolated function generateIpsCustomImpl(string patientId, ips:IPSContext context) returns r4:Bundle|error {
+    // Custom implementation for generating an IPS Bundle.
+    r4:Bundle ipsBundle = {
+        'type: "document",
+        'id: "ips-bundle-" + patientId,
+        'meta: {
+            'profile: ["http://hl7.org/fhir/uv/ips/StructureDefinition/InternationalPatientSummary"]
+        },
+        entry: []
+    };
+    return ipsBundle;
+}
+
+public function initCustomImplementationForGenerateIps() {
+    // Register the custom implementation for the IPS generation function within the init function.
+    log:printInfo("Initializing custom IPS generation implementation");
+    ips:generateIps = generateIpsCustomImpl;
+}
 
 public isolated function create(json payload) returns r4:FHIRError|uscore501:USCorePatientProfile {
     uscore501:USCorePatientProfile|error patient = parser:parse(payload, uscore501:USCorePatientProfile).ensureType();

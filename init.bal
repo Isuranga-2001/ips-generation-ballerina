@@ -10,5 +10,7 @@ function init() returns error? {
     check initMedication();
     check initImmunization();
 
+    initCustomImplementationForGenerateIps();
+
     log:printInfo("FHIR service initialized successfully");
 }
